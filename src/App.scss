@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+$bp-mobile: 375px;
+
+$orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+$very-light-gray: hsl(0, 0%, 95%);
+
+body {
+    margin: 0;
+}
+main {
+    display: flex;
+    .card {
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 48px;
+        position: relative;
+
+        h1 {
+            font-family: "Big Shoulders Display", sans-serif;
+            font-size: 40px;
+            color: $very-light-gray;
+            text-transform: uppercase;
+            margin-top: 35px;
+            margin-bottom: 25px;
+        }
+        p {
+            font-family: "Lexend Deca", sans-serif;
+            font-size: 15px;
+            color: $transparent-white;
+        }
+        button {
+            background: none;
+            border: none;
+            border-radius: 25px;
+            padding: 11px 31px;
+            color: transparent;
+            background-color: $very-light-gray;
+            // color must be black for background to completely show through, also works as fallback text color for IE and older browsers
+            color: #000;
+            cursor: pointer;
+            font-family: inherit;
+            // make text look transparent so container background shows through:
+            mix-blend-mode: screen;
+            font-size: 15px;
+            font-family: "Lexend Deca", sans-serif;
+            position: absolute;
+            bottom: 48px;
+            box-sizing: border-box;
+            &:active {
+                color: $very-light-gray;
+                border: 2px solid $very-light-gray;
+                background-color: transparent;
+            }
+        }
+        &:first-child {
+            background-color: $orange;
+        }
+        &:last-child {
+            background-color: $very-dark-cyan;
+        }
+        &:nth-child(2) {
+            background-color: $dark-cyan;
+        }
+    }
+    @media (max-width: $bp-mobile) {
+        flex-direction: column;
+        .card {
+            height: auto;
+            p {
+                margin-bottom: 25px;
+            }
+            button {
+                position: relative;
+                bottom: 0;
+            }
+        }
+    }
+}
