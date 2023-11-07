@@ -10,11 +10,21 @@ $very-light-gray: hsl(0, 0%, 95%);
 
 body {
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2;
 }
 main {
     display: flex;
+    max-width: 920px;
+    max-height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+
     .card {
-        height: 100vh;
+        height: 100%;
         box-sizing: border-box;
         padding: 48px;
         position: relative;
@@ -31,6 +41,7 @@ main {
             font-family: "Lexend Deca", sans-serif;
             font-size: 15px;
             color: $transparent-white;
+            margin-bottom: 80px;
         }
         button {
             background: none;
@@ -47,8 +58,7 @@ main {
             mix-blend-mode: screen;
             font-size: 15px;
             font-family: "Lexend Deca", sans-serif;
-            position: absolute;
-            bottom: 48px;
+
             box-sizing: border-box;
             &:active {
                 color: $very-light-gray;
@@ -68,6 +78,7 @@ main {
     }
     @media (max-width: $bp-mobile) {
         flex-direction: column;
+        overflow: auto;
         .card {
             height: auto;
             p {
